@@ -1,6 +1,5 @@
 import random
 
-# Modellierung der Pokerkarten
 FARBEN = ['Herz', 'Karo', 'Kreuz', 'Pik']
 WERTE = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Bube', 'Dame', 'König', 'Ass']
 
@@ -89,7 +88,6 @@ def simuliere_pokerspiele(anzahl_spiele=100000):
         deck = KartenDeck()
         hand = deck.ziehe_karten(5)
 
-        # Prüfen, welche Pokerkombinationen in der Hand vorliegen
         if hat_paar(hand):
             kombinationen_zaehler['paar'] += 1
         if hat_drilling(hand):
@@ -112,7 +110,6 @@ def berechne_prozentsaetze(zaehler, gesamt_spiele):
     return {kombination: round((anzahl / gesamt_spiele) * 100, 2) for kombination, anzahl in zaehler.items()}
 
 
-# Simulation und Berechnung der Wahrscheinlichkeiten
 kombinationen_zaehler = simuliere_pokerspiele()
 prozentsaetze = berechne_prozentsaetze(kombinationen_zaehler, 100000)
 
