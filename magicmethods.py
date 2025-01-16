@@ -40,7 +40,7 @@ class Auto:
     def __repr__(self):
         return f"Auto({self.ps} PS)"
 
-if __name__ == "__main__":
+def my_cli():
     a1 = Auto(50)
     a2 = Auto(60)
 
@@ -69,3 +69,10 @@ if __name__ == "__main__":
         print(a1 - "test") 
     except TypeError as e:
         print(e)
+
+if __name__ == "__main__":
+    try:
+        my_cli()
+    except Exception as error:
+        print(f"Unexpected error: {error}")
+        sys.exit(1)
